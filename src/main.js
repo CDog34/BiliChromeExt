@@ -1,6 +1,6 @@
 import {handleUri} from './helpers';
-import {topHandlers} from './handlers/TopHandlers'
+import {topHandlers} from './handlers/TopHandlers';
 
-window.addEventListener('load',function(){
-	handleUri(document.location.pathname,topHandlers)
+window.addEventListener('load', function() {
+    handleUri(document.location.pathname, topHandlers);
 });
