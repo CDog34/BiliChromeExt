@@ -1,7 +1,7 @@
 export const handleUri = (uri, handlers)=>{
     const pathArr=uri.split('/').filter((item)=>!!item);
-    const key=pathArr[0];
-    if (handlers[key]) return handlers[key](pathArr.slice(1).join('/'));
+    const key=pathArr[ 0 ];
+    if (handlers[ key ]) return handlers[ key ](pathArr.slice(1).join('/'));
 };
 
 export const collectionToArray=(collection)=>{

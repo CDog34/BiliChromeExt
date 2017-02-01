@@ -28,6 +28,8 @@
             "error",
             "always"
         ],
-        "no-console": ["error", {"allow": ["info", "warn", "error"] }]
+        "no-console": ["error", {"allow": ["info", "warn", "error"] }],
+        "computed-property-spacing": ["error", "always"],
+        "no-var": ["error"]
     }
 }
