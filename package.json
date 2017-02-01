@@ -1,0 +1,32 @@
+{
+  "name": "biliChromeExt",
+  "version": "0.0.1",
+  "description": "Chrome Bilibili Bangumi Extension",
+  "main": "src/main.js",
+  "repository": {},
+  "author": "CDog <i@cdog.me>",
+  "license": "MIT",
+  "scripts":{
+	"cleanDist": "rimraf dist/*",
+	"copyManifest": "copyfiles -f ./src/manifest.json ./dist",
+	"dev": "yarn cleanDist && yarn copyManifest && rollup -c -w"
+	},
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-plugin-async-to-promises": "^1.0.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-regenerator": "^6.22.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "copyfiles": "^1.1.0",
+    "lodash": "^4.17.4",
+    "rimraf": "^2.5.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-svelte": "^1.6.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^3.2.2"
+  }
+}
