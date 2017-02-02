@@ -2,7 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-// import uglify from 'rollup-plugin-uglify';
+import uglify from 'rollup-plugin-uglify';
 
 export default {
   entry: 'src/main.js',
@@ -27,6 +27,6 @@ export default {
      babel({
       include: ['./src/**/*.*'],
     }),
-     // uglify()
+     uglify()
   ]
 }
