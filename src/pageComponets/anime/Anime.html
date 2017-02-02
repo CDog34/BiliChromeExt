@@ -1,4 +1,4 @@
-<div class="back-drop {{contentShow ? 'show' : ''}}">
+<div class="back-drop {{contentShow ? 'show' : ''}}" on:mouseenter="cancelCloseTimeout()">
     <span class="close-btn" on:click="close()">&times;</span>
     <img src="{{bangumi.cover}}" alt="{{bangumi.title}}">
     <div class="info-content">
@@ -90,6 +90,9 @@
             close(){
                 clearTimeout(this.closeTimeout);
                 this.set({contentShow: false})
+            },
+            cancelCloseTimeout(){
+                clearTimeout(this.closeTimeout);
             }
         }
     }
