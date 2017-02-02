@@ -10,5 +10,5 @@ const createDom = () => {
 export const init = options => {
     const target = options.target || createDom();
 
-    const animeComponent = new Anime(Object.assign(options, {target: target}));
+    new Anime(Object.assign(options, {target: target}));
 };
