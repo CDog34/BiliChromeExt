@@ -1,4 +1,5 @@
 <div class="back-drop {{contentShow ? 'show' : ''}}">
+    <span class="close-btn" on:click="close()">&times;</span>
     <img src="{{bangumi.cover}}" alt="{{bangumi.title}}">
     <div class="info-content">
         <h1>{{bangumi.title}}</h1>
@@ -62,6 +63,14 @@
         width: 100px;
         height: auto;
     }
+
+    .close-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 18px;
+        cursor: pointer;
+    }
 </style>
 
 <script>
@@ -72,7 +81,15 @@
             }
         },
         onrender(){
-            setTimeout(() => this.set({contentShow: true}), 100);
+            setTimeout(() => {
+                this.set({contentShow: true});
+                setTimeout(() => this.set({contentShow: false}), 5000);
+            }, 100);
+        },
+        methods: {
+            close(){
+                this.set({contentShow: false})
+            }
         }
     }
 </script>
