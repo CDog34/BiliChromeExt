@@ -1,0 +1,57 @@
+<div class="back-drop">
+    <img src="{{bangumi.cover}}" alt="{{bangumi.title}}">
+    <div class="info-content">
+        <h1>{{bangumi.title}}</h1>
+        <p>{{bangumi.evaluate}}</p>
+    </div>
+</div>
+
+
+<style>
+    .back-drop {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999;
+        height: 200px;
+        width: 400px;
+        background-color: #fff;
+        padding: 16px;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius:4px;
+        box-shadow: rgba(242, 93, 142, 0.48) 1px 1px 10px;
+    }
+
+    .info-content {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-self: stretch;
+        flex: 1;
+        margin-left: 16px;
+    }
+
+    h1 {
+        color: rgba(0, 0, 0, 0.87);
+        align-self: stretch;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    p {
+        margin-top: 16px;
+        flex: 1;
+        flex-shrink: 0;
+        overflow-y: scroll;
+    }
+
+    img {
+        width: 100px;
+        height: auto;
+    }
+</style>

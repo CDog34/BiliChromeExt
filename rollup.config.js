@@ -15,9 +15,6 @@ export default {
     // }),
      commonjs({
       include: 'node_modules/**',
-      namedExports: {
-        'lodash': [ 'findIndex', 'remove' ]
-      }
     }),
     svelte({
       // By default, all .html and .svelte files are compiled
@@ -25,15 +22,7 @@ export default {
 
       // You can restrict which files are compiled
       // using `include` and `exclude`
-      include: ['src/components/**/*.html','src/views/*.html'],
-
-      // By default, the client-side compiler is used. You
-      // can also use the server-side rendering compiler
-      // generate: 'ssr',
-
-      // If you're doing server-side rendering, you may want
-      // to prevent the client-side compiler from duplicating CSS
-      // css: false
+      include: ['./src/**/*.html'],
     }),
      babel({
       include: ['./src/**/*.*'],
