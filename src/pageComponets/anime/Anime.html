@@ -83,11 +83,12 @@
         onrender(){
             setTimeout(() => {
                 this.set({contentShow: true});
-                setTimeout(() => this.set({contentShow: false}), 5000);
+                this.closeTimeout = setTimeout(() => this.set({contentShow: false}), 5000);
             }, 100);
         },
         methods: {
             close(){
+                clearTimeout(this.closeTimeout);
                 this.set({contentShow: false})
             }
         }
