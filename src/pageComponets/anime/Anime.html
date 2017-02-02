@@ -1,4 +1,4 @@
-<div class="back-drop">
+<div class="back-drop {{contentShow ? 'show' : ''}}">
     <img src="{{bangumi.cover}}" alt="{{bangumi.title}}">
     <div class="info-content">
         <h1>{{bangumi.title}}</h1>
@@ -22,8 +22,16 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        border-radius:4px;
+        border-radius: 4px;
         box-shadow: rgba(242, 93, 142, 0.48) 1px 1px 10px;
+        transform: translateX(calc(100% + 24px));
+        opacity: 0;
+        transition: transform .5s, opacity .5s;
+    }
+
+    .back-drop.show {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .info-content {
@@ -55,3 +63,16 @@
         height: auto;
     }
 </style>
+
+<script>
+    export default{
+        data(){
+            return {
+                contentShow: false
+            }
+        },
+        onrender(){
+            setTimeout(() => this.set({contentShow: true}), 100);
+        }
+    }
+</script>
